@@ -104,47 +104,46 @@ function checkNumber() {
 { building: "C", numebrBuilding: 58, surface: 54.04, floors: 4, link: "https://parkpaderewskiego.pl/wp-content/uploads/2023/08/B-B-p1-11.pdf"},
 { building: "C", numebrBuilding: 59, surface: 53.55, floors: 4, link: "https://parkpaderewskiego.pl/wp-content/uploads/2023/08/B-B-p1-11.pdf"} 
 ];
-  // Pobieranie wartości wprowadzonej przez użytkownika
-  const calculateRateReturnAndApartmentShow = parseFloat(document.getElementById("calculateRateReturnAndApartmentShow").value);
+// Get the user input value
+const calculateRateReturnAndApartmentShow = parseFloat(document.getElementById("calculateRateReturnAndApartmentShow").value);
 
-  // Pobieranie elementów HTML, do których zostaną wstawione wyniki
-  const result = document.getElementById("result");
-  const proposedApartments = document.getElementById("proposedApartments");
-  const monthsRent = document.getElementById("monthsRent");
-  const inputValue = calculateRateReturnAndApartmentShow;
+// Get HTML elements where results will be displayed
+const result = document.getElementById("result");
+const proposedApartments = document.getElementById("proposedApartments");
+const monthsRent = document.getElementById("monthsRent");
+const inputValue = calculateRateReturnAndApartmentShow;
 
-  // Filtracja mieszkań na podstawie podanego metrażu
-  const foundItems = apartments.filter(item => item.surface === inputValue);
+// Filter apartments based on the entered square footage
+const foundItems = apartments.filter(item => item.surface === inputValue);
 
-  // Wyświetlanie znalezionych mieszkań jako linków lub komunikatu
-  if (foundItems.length > 0) {
-    const links = foundItems.map(item => `<a href="${item.link}" target="_blank"> Budynek ${item.building} | Mieszkanie ${item.numebrBuilding} | Piętro ${item.floors} </a><br> `).join(' ');
-    proposedApartments.innerHTML = links;
-  } else {
-    proposedApartments.innerHTML = `Nie ma mieszkania o takim metrażu, skontaktuj się z biurem sprzedaży. Tel +48 786 337 302`;
-  }
-
-  // Obliczanie wynagrodzenia za wynajem, cenę za metr kwadratowy i wartość obliczoną
-  const rent = (calculateRateReturnAndApartmentShow * 54).toFixed(2);
-  const pricePerMeter = calculateRateReturnAndApartmentShow * 8500;
-  const calculatedValue = ((calculateRateReturnAndApartmentShow + 50 * 648) / pricePerMeter * 100).toFixed(2) + "%";
-  result.innerHTML = calculatedValue;
-  monthsRent.innerHTML = rent + " PLN";
-
-  // Obsługa błędów, gdy użytkownik wprowadzi niepoprawną wartość lub zero
-  if (isNaN(inputValue)) {
-    result.innerHTML = "Wpisz wartość w okienko";
-    monthsRent.innerHTML = "Wpisz wartość  okienko";
-    proposedApartments.innerHTML = "Wpisz wartość okienko";
-  }
-
-  if (inputValue === 0) {
-    result.innerHTML = "Wartość pola metrażu nie może być zerem";
-    monthsRent.innerHTML = "Wartość pola metrażu nie może być zerem";
-    proposedApartments.innerHTML = "Wartość pola metrażu nie może być zerem";
-  }
+// Display found apartments as links or a message
+if (foundItems.length > 0) {
+  const links = foundItems.map(item => `<a href="${item.link}" target="_blank"> Building ${item.building} | Apartment ${item.numebrBuilding} | Floor ${item.floors} </a><br> `).join(' ');
+  proposedApartments.innerHTML = links;
+} else {
+  proposedApartments.innerHTML = `No apartments found with this square footage, please contact the sales office. Tel +48 786 337 302`;
 }
 
-// Przypisanie funkcji do obsługi przycisku "Oblicz"
+// Calculate rent, price per square meter, and calculated value
+const rent = (calculateRateReturnAndApartmentShow * 54).toFixed(2);
+const pricePerMeter = calculateRateReturnAndApartmentShow * 8500;
+const calculatedValue = ((calculateRateReturnAndApartmentShow + 50 * 648) / pricePerMeter * 100).toFixed(2) + "%";
+result.innerHTML = calculatedValue;
+monthsRent.innerHTML = rent + " PLN";
+
+// Error handling for invalid or zero input
+if (isNaN(inputValue)) {
+  result.innerHTML = "Enter a value in the input field";
+  monthsRent.innerHTML = "Enter a value in the input field";
+  proposedApartments.innerHTML = "Enter a value in the input field";
+}
+
+if (inputValue === 0) {
+  result.innerHTML = "The square footage value cannot be zero";
+  monthsRent.innerHTML = "The square footage value cannot be zero";
+  proposedApartments.innerHTML = "The square footage value cannot be zero";
+}
+
+// Assign the function to handle the "Calculate" button
 const calculate = document.getElementById("calculate");
-calculate.addEventListener("click", checkN
+calculate.addEventListener("click", checkNumber);
