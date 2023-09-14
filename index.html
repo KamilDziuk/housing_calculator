@@ -3,45 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script> <!-- Include a JavaScript file (script.js) and defer its execution. -->
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Link to an external CSS stylesheet (style.css). -->
     <title>Stopa procentowa</title>
 </head>
 <body>
-    <section class="calculatorBody">
-        <div class="container12">
-        <div class="column">
-        <div class="form-group">
-        Podaj metraż <input type="number" id="calculateRateReturnAndApartmentShow"> <button id="calculate">Oblicz</button>
-        <br>
-        <br>
-        <br>
-    
-        <p>Proponowane mieszkania o takim metrażu:</p>
-    Karta  PDF: <div id="proposedApartments"></div>
-       
-    
+    <section class="calculatorBody"> <!-- Main section for the calculator -->
+        <div class="container12"> <!-- Container for layout -->
+            <div class="column"> <!-- First column -->
+                <div class="form-group">
+                    Podaj metraż <input type="number" id="calculateRateReturnAndApartmentShow"> <button id="calculate">Oblicz</button>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Proponowane mieszkania o takim metrażu:</p>
+                    Karta PDF: <div id="proposedApartments"></div> <!-- Display proposed apartments -->
+                </div>
+            </div>
+            <div class="column1"> <!-- Second column -->
+                <div class="form-group">
+                    <p>Szacunkowy miesięczny przychód z najmu:<br>
+                    <div id="monthsRent"></div> <!-- Display estimated monthly rental income -->
+                </div>
+                <div class="form-group">
+                    <p>Prognozowany wzrost wartości nieruchomości:<br><br>
+                    10,50%</p> <!-- Display projected property value increase -->
+                    <div class="projectedIncreaseInValue">*Projected property value increase for the Śląskie voivodeship in 2022/2023</div>
+                </div>
+                <div class="form-group">
+                    <p>Szacunkowy zwrot z inwestycji:</p> <!-- Display estimated investment return -->
+                    <div id="result"></div>
+                </div>
+            </div>
         </div>
-        </div>
-        <div class="column1">
-        <div class="form-group">
-        <p>Szacunkowy miesięczny przychód z najmu:<br>
-        
-
-            <div id="monthsRent"></div>
-        </div>
-        <div class="form-group">
-        <p>Prognozowany wzrost wartości nieruchomości:<br><br>
-        10,50%</p>
-        <div class="projectedIncreaseInValue">*Prognozowany wzrost wartości nieruchomości woj.Śląskie r/r 2022/2023</div>
-        </div>
-        <div class="form-group">
-        <p>Szacunkowy zawrot z inwestycji:
-        </p>
-        <div id="result"></div>
-        </div>
-        </div>
-        </div>
-</section>
+    </section>
 </body>
 </html>
+
