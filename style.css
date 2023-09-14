@@ -1,72 +1,79 @@
+/* This class defines the styling for a container with a maximum width of 1500px,
+   centered horizontally with some padding and border. */
 .container12 {
- 
-  max-width:1500px; 
+  max-width: 1500px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #5D5455;
-  
- 
+
   display: flex;
   justify-content: space-between;
- }
- .column {
+}
+
+/* This class defines the styling for columns within the container. */
+.column {
   width: calc(50% - 27px);
- }
- .column1 {
+}
+
+/* This class defines the styling for another type of column within the container. */
+.column1 {
   width: calc(50% - 20px);
- }
- 
- .form-group {
+}
+
+/* This class defines the styling for form groups, including margin and font size. */
+.form-group {
   margin-bottom: 15px;
-   font-size: 22px
- }
- 
- label {
+  font-size: 22px; /* Font size for larger screens */
+}
+
+/* This styling is for labels within form groups, making them bold with some margin. */
+label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
- }
- 
- input[type="number"] {
+}
+
+/* This styling is for number input fields, specifying width, padding, border, and border radius. */
+input[type="number"] {
   width: 100px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 3px;
- 
- }
- .projectedIncreaseInValue
- {
-     font-size: 13px;
- }
- @media only screen and (max-width: 600px) {
- .form-group {
- 
-   font-size: 17px
- }
- .projectedIncreaseInValue
- {
-     font-size: 9px;
- }
- }
- @media only screen and (max-width:350px) {
- .form-group {
- 
-   font-size: 17px
- }
- .projectedIncreaseInValue
- {
-     font-size: 9px;
- }
- }
- @media only screen and (max-width:250px) {
- .form-group {
- 
-   font-size: 17px
- }
- .projectedIncreaseInValue
- {
-     font-size: 9px;
- }
- }
+}
+
+/* Styling for a specific class 'projectedIncreaseInValue'. */
+.projectedIncreaseInValue {
+  font-size: 13px; /* Font size for larger screens */
+}
+
+/* Media queries for smaller screens, adjusting the font size for form groups and 'projectedIncreaseInValue'. */
+@media only screen and (max-width: 600px) {
+  .form-group {
+    font-size: 17px; /* Font size for screens up to 600px wide */
+  }
+  .projectedIncreaseInValue {
+    font-size: 9px; /* Font size for screens up to 600px wide */
+  }
+}
+
+/* Additional media queries for even smaller screens, with the same font size adjustments. */
+@media only screen and (max-width: 350px) {
+  .form-group {
+    font-size: 17px; /* Font size for screens up to 350px wide */
+  }
+  .projectedIncreaseInValue {
+    font-size: 9px; /* Font size for screens up to 350px wide */
+  }
+}
+
+/* Further media queries for the smallest screens, still adjusting font sizes. */
+@media only screen and (max-width: 250px) {
+  .form-group {
+    font-size: 17px; /* Font size for screens up to 250px wide */
+  }
+  .projectedIncreaseInValue {
+    font-size: 9px; /* Font size for screens up to 250px wide */
+  }
+}
