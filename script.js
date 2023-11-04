@@ -1,5 +1,5 @@
 function checkNumber() {
-  const apartments = [
+  let apartments = [
 { building: "B", numebrBuilding:  1, surface: 33.56, floors: 0,link: "https://parkpaderewskiego.pl/wp-content/uploads/2023/08/B-B-p1-11.pdf"},
 { building: "B", numebrBuilding: 2, surface: 45.85, floors: 0,link: "https://parkpaderewskiego.pl/wp-content/uploads/2023/08/B-B-p1-11.pdf"},
 { building: "B", numebrBuilding: 3, surface: 62.59, floors: 0,link: "https://parkpaderewskiego.pl/wp-content/uploads/2023/08/B-B-p1-11.pdf"},
@@ -105,20 +105,20 @@ function checkNumber() {
 { building: "C", numebrBuilding: 59, surface: 53.55, floors: 4, link: "https://parkpaderewskiego.pl/wp-content/uploads/2023/08/B-B-p1-11.pdf"} 
 ];
 // Get the user input value
-const calculateRateReturnAndApartmentShow = parseFloat(document.getElementById("calculateRateReturnAndApartmentShow").value);
+let calculateRateReturnAndApartmentShow = parseFloat(document.getElementById("calculateRateReturnAndApartmentShow").value);
 
 // Get HTML elements where results will be displayed
-const result = document.getElementById("result");
-const proposedApartments = document.getElementById("proposedApartments");
-const monthsRent = document.getElementById("monthsRent");
-const inputValue = calculateRateReturnAndApartmentShow;
+let result = document.getElementById("result");
+let proposedApartments = document.getElementById("proposedApartments");
+let monthsRent = document.getElementById("monthsRent");
+let inputValue = calculateRateReturnAndApartmentShow;
 
 // Filter apartments based on the entered square footage
 const foundItems = apartments.filter(item => item.surface === inputValue);
 
 // Display found apartments as links or a message
 if (foundItems.length > 0) {
-  const links = foundItems.map(item => `<a href="${item.link}" target="_blank"> Building ${item.building} | Apartment ${item.numebrBuilding} | Floor ${item.floors} </a><br> `).join(' ');
+  let links = foundItems.map(item => `<a href="${item.link}" target="_blank"> Building ${item.building} | Apartment ${item.numebrBuilding} | Floor ${item.floors} </a><br> `).join(' ');
   proposedApartments.innerHTML = links;
 } else {
   proposedApartments.innerHTML = `No apartments found with this square footage, please contact the sales office. Tel +48 786 337 302`;
@@ -145,5 +145,5 @@ if (inputValue === 0) {
 }
 
 // Assign the function to handle the "Calculate" button
-const calculate = document.getElementById("calculate");
+let calculate = document.getElementById("calculate");
 calculate.addEventListener("click", checkNumber);
